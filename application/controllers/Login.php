@@ -11,15 +11,15 @@ class Login extends CI_controller
 
     public function login()
     {
-        $nip    = $this->input->post('nip', TRUE);
+        $username    = $this->input->post('username', TRUE);
         $pass = md5($this->input->post('password', TRUE));
-        $validate = $this->login_model->login($nip, $pass);
+        $validate = $this->login_model->login($username, $pass);
         if ($validate->num_rows() > 0) {
             $data  = $validate->row_array();
-            $nip  = $data['nip'];
+            $username  = $data['username'];
             $role_id = $data['role_id'];
             $sesdata = array(
-                'nip'     => $nip,
+                'username'     => $username,
                 'role_id'    => $role_id,
                 'logged_in' => TRUE
             );
@@ -30,28 +30,30 @@ class Login extends CI_controller
                 redirect('admin/');
             }
         } else {
-            echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><b>NIPD</b> dan <b>Password</b> tidak cocok</div>');
-            redirect('welcome/login');
+            echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><b>NIP</b> dan <b>Password</b> tidak cocok</div>');
+            redirect('login/login');
         }
     }
 
     public function auth()
     {
-        $nip_baru = $this->input->post('nip_baru', TRUE);
+        $nip = $this->input->post('nip', TRUE);
         $nama_pns = $this->input->post('nama_pns', TRUE);
         $no_hp = $this->input->post('no_hp', TRUE);
-        $validate = $this->login_model->validate($nip_baru, $nama_pns, $no_hp);
+        $validate = $this->login_model->validate($nip, $nama_pns, $no_hp);
         if ($validate->num_rows() > 0) {
             $data  = $validate->row_array();
             $user_id  = $data['user_id'];
             $nama_pns  = $data['nama_pns'];
             $no_hp  = $data['no_hp'];
-            $no = $data['nip_baru'];
+            $no = $data['nip'];
+            $j_id = $data['jabatan_id'];
             $sesdata = array(
                 'user_id'  => $user_id,
                 'nama_pns'  => $nama_pns,
                 'no_hp'  => $no_hp,
-                'nip_baru'     => $no,
+                'nip'     => $no,
+                'jabatan_id' => $j_id,
                 'logged_in' => TRUE
             );
             $this->session->set_userdata($sesdata);
@@ -92,6 +94,6 @@ class Login extends CI_controller
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('welcome/login');
+        redirect('admin/Overview/login');
     }
 }

@@ -39,14 +39,14 @@
                                     <form class="" method="post" action="<?php echo base_url() . 'login/login'; ?>">
                                         <div class="form-row">
                                             <div class="col-md-12">
-                                                <div class="position-relative form-group"><input name="nip" id="" placeholder="NIP" type="" class="form-control" required></div>
+                                                <div class="position-relative form-group"><input name="username" id="" placeholder="Username" type="" class="form-control" required></div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="position-relative form-group"><input name="password" id="" placeholder="Password" type="password" class="form-control" required></div>
                                             </div>
                                         </div>
                                         <div class="modal-footer clearfix">
-                                            <div class="float-left"><a href="<?= base_url(); ?>/login/validasi" class="btn-lg btn btn-link">Register</a></div>
+                                            <div class="float-left"><a href="<?= base_url(); ?>login/validasi" class="btn-lg btn btn-link">Validasi</a></div>
                                             <div class="float-right">
                                                 <button class="btn btn-primary btn-lg" type="submit">Login</button>
                                             </div>

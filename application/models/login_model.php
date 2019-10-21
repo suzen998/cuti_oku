@@ -2,17 +2,17 @@
 
 class login_model extends CI_model
 {
-    function login($nip, $pass)
+    function login($username, $pass)
     {
-        $this->db->where('nip_baru', $nip);
+        $this->db->where('username', $username);
         $this->db->where('password', $pass);
         $result = $this->db->get('user', 1);
         return $result;
     }
 
-    function validate($nip_baru, $nama_pns, $no_hp)
+    function validate($nip, $nama_pns, $no_hp)
     {
-        $this->db->where('nip_baru', $nip_baru);
+        $this->db->where('nip', $nip);
         $this->db->where('nama_pns', $nama_pns);
         $this->db->where('no_hp', $no_hp);
         $result = $this->db->get('pegawai', 1);
@@ -27,7 +27,7 @@ class login_model extends CI_model
     function addUser()
     {
         $data = [
-            "nip_baru" => $this->session->userdata('nip_baru'),
+            "username" => $this->session->userdata('username'),
             "password" => md5($this->input->post('password', true)),
             "role_id" => 2
         ];
@@ -38,7 +38,7 @@ class login_model extends CI_model
     function addUserAdmin()
     {
         $data = [
-            "nip_baru" => $this->session->userdata('nip_baru'),
+            "username" => $this->session->userdata('nip'),
             "password" => md5($this->input->post('password', true)),
             "role_id" => 1
         ];

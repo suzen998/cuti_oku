@@ -59,7 +59,7 @@
                 foreach ($user as $use) : ?>
                     <tr>
                         <td class="align-middle"><?= $i++ ?></td>
-                        <td class="align-middle"><?= $use['nip_baru']; ?></td>
+                        <td class="align-middle"><?= $use['username']; ?></td>
                         <td class="align-middle"><a class="btn btn-danger btn-sm tombol-hapus" role="button" href="<?= base_url(); ?>admin/hapusKelas/<?= $use['user_id']; ?>">Hapus</a></td>
                     </tr>
                 <?php endforeach; ?>

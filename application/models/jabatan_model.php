@@ -16,6 +16,11 @@ class jabatan_model extends CI_model
         $this->db->insert('jabatan', $data);
     }
 
+    public function getJabatanid()
+    {
+        return $this->db->get_where('jabatan', ['jabatan_id' => $this->session->userdata('jabatan_id')])->result_array();
+    }
+
     public function edit()
     { }
 

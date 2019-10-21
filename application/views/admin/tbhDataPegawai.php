@@ -12,22 +12,7 @@
     </div> -->
 <?php endif; ?>
 
-<div class="row">
-    <div class="col-md-12">
-        <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav pt-0 pb-3">
-            <li class="nav-item">
-                <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-0">
-                    <span>Single Data</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-1">
-                    <span>Multiple Data</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
+
 
 <div class="tab-content">
     <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
@@ -46,16 +31,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="username">NIP LAMA</label>
+                                    <label for="username">NIP</label>
                                     <div>
-                                        <input name="nip_lama" id="nip_lama" class="form-control" placeholder="" type="number" required />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="username">NIP BARU</label>
-                                    <div>
-                                        <input name="nip_baru" id="nip_baru" class="form-control" placeholder="" type="number" required />
+                                        <input name="nip" id="nip" class="form-control" placeholder="" type="text" required />
                                     </div>
                                 </div>
 
@@ -76,7 +54,7 @@
                                 <div class="form-group">
                                     <label for="username">NIK</label>
                                     <div>
-                                        <input name="nik" id="nik" class="form-control" placeholder="" type="number" required />
+                                        <input name="nik" id="nik" class="form-control" placeholder="" type="text" required />
                                     </div>
                                 </div>
 
@@ -107,17 +85,11 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="username">JENIS KELAMIN</label>
-                                    <div>
-                                        <select name="gol_id" id="gol_id" class="multiselect-dropdown form-control" required />
-                                        <?php if (isset($jenis_kelamin)) {
-                                            foreach ($jenis_kelamin as $jkel) : ?>
-                                                <option value="<?= $jkel['jenis_kelamin']; ?>"><?= $jkel['jenis_kelamin']; ?></option>
-                                        <?php endforeach;
-                                        } ?>
-                                        </select>
-                                    </div>
+                                <div class="position-relative form-group">
+                                    <select name="jenis_kelamin" type="text" class="multiselect-dropdown form-control" required />
+                                    <option value="Perempuan">Perempuan</option>
+                                    <option value="Laki - Laki">Laki - Laki</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
@@ -214,13 +186,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="username">KATEGORI</label>
-                                    <div>
-                                        <input name="kategori" id="kategori" class="form-control" placeholder="" type="text" required />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
                                     <button type="submit" class="btn btn-primary float-right mb-3" name="signup" value="Sign up">Submit
                                     </button>
                                 </div>
@@ -249,18 +214,6 @@
                                         <?php endforeach;
                                         } ?>
                                     </select>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table" id="dynamicSiswa">
-                                        <tr>
-                                            <td>
-                                                <input type="text" name="siswa[]" placeholder="Nama Siswa" class="form-control name_list col-4 d-inline-block" required />
-                                                <input type="number" name="nipd[]" placeholder="NIPD" class="form-control name_list col-2 d-inline-block" required />
-                                                <input type="text" name="namaIbu[]" placeholder="Nama Ibu" class="form-control name_list col-4 d-inline-block" required />
-                                            </td>
-                                            <td><button type="button" name="addSiswa" id="addSiswa" class="btn btn-success">Add More</button></td>
-                                        </tr>
-                                    </table>
                                 </div>
                         </div>
                         <div class="form-group">

@@ -36,8 +36,7 @@ class pegawai_model extends CI_model
     {
         $data = [
             "nama_pns" => $this->input->post('nama_pns', true),
-            "nip_lama" => $this->input->post('nip_lama', true),
-            "nip_baru" => $this->input->post('nip_baru', true),
+            "nip" => $this->input->post('nip', true),
             "gelar_dpn" => $this->input->post('gelar_dpn', true),
             "gelar_blk" => $this->input->post('gelar_blk', true),
             "nik" => $this->input->post('nik', true),
@@ -53,8 +52,7 @@ class pegawai_model extends CI_model
             "jenis_pegawai" => $this->input->post('jenis_pegawai', true),
             "instansi_id" => $this->input->post('instansi_id', true),
             "unor_id" => $this->input->post('unor_id', true),
-            "status_pns" => $this->input->post('status_pns', true),
-            "kategori" => $this->input->post('kategori', true)
+            "status_pns" => $this->input->post('status_pns', true)
 
         ];
         $this->db->insert('pegawai', $data);

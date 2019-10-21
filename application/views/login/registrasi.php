@@ -42,18 +42,15 @@
                                             <div class="col-md-12">
                                                 <p class="mb-2"><strong>Identitas Anda :</strong></p>
                                                 <p class="mb-1">Nama : <?php echo $this->session->userdata('nama_pns'); ?></p>
-                                                <p class="mb-2">NIP : <?php echo $this->session->userdata('nip_baru'); ?></p>
+                                                <p class="mb-2">NIP : <?php echo $this->session->userdata('nip'); ?></p>
                                                 <p class="mb-2">No Telp : <?php echo $this->session->userdata('no_hp'); ?></p>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="position-relative form-group"><input name="password" id="examplePassword" placeholder="Password Baru" type="password" class="form-control" required></div>
                                             </div>
                                         </div>
                                 </div>
                                 <div class="modal-footer clearfix">
                                     <div class="float-left"><a href="<?= base_url(); ?>/login/logout" class="btn-lg btn btn-link">Kembali</a></div>
                                     <div class="float-right">
-                                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                                        <a href="<?= base_url('pegawai/formPengajuan'); ?>" class="btn btn-primary btn-lg">Proses</a>
                                     </div>
                                 </div>
                             </div>

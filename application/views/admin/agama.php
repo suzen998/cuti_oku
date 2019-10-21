@@ -1,4 +1,3 @@
-
 <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
 <?php if ($this->session->flashdata('flash')) : ?>
     <!-- <div class="row mt-3">
@@ -18,7 +17,7 @@
         <h5 class="card-title">Tambah Data Agama</h5>
         <form id="signupForm" class="mx-auto" action="<?= base_url('admin/Overview/addAgama'); ?>" method="post" novalidate="novalidate">
             <div>
-                <div class="form-group col-4 d-inline-block align-middle">
+                <div class="form-group col-4 d-inline-block align-middle table-responsive">
                     <label for="username">Agama</label>
                     <select name="kelas" class="multiselect-dropdown form-control">
                         <option value="Kristen">Kristen</option>

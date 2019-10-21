@@ -6,8 +6,8 @@ class pegawai extends CI_Controller
     {
         parent::__construct();
         $this->load->model('pegawai_model');
-        //$this->load->model('cuti_model');
-        //$this->load->model('pengajuan_model');
+        $this->load->model('jabatan_model');
+        $this->load->model('jcuti_model');
 
 
 
@@ -33,26 +33,23 @@ class pegawai extends CI_Controller
     public function formPengajuan()
     {
         $this->load->view('templates/headerPegawai');
+        $data['jabatan'] = $this->jabatan_model->getJabatanid();
+        $data['jenis_cuti'] = $this->jcuti_model->getJeniscuti();
+        $this->load->view("pegawai/formpengajuan", $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function verifikasi()
+    {
+        $this->load->view('templates/headerPegawai');
         //$data['jenis_kawin'] = $this->Pengaturan_model->getJeniskawin();
-        $this->load->view("pegawai/formpengajuan");
+        $this->load->view("pegawai/Verifikasi");
         $this->load->view('templates/footer');
     }
 
 
-
     public function addCuti()
-    {
-        $transaksi = $this->pegawai_model;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
-
-        if ($validation->run()) {
-            $product->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
-
-        $this->load->view("admin/product/new_form");
-    }
+    { }
 
     public function editCuti($id = null)
     {
@@ -79,6 +76,29 @@ class pegawai extends CI_Controller
 
         if ($this->product_model->delete($id)) {
             redirect(site_url('admin/products'));
+        }
+    }
+
+    //Jenis Cuti
+    public function jenis_cuti()
+    {
+        $this->load->view('templates/header');
+        $data['jenis_cuti'] = $this->jcuti_model->getJeniscuti();
+        $this->load->view("pegawai/jeniscuti", $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function tbhjeniscuti()
+    {
+        $this->form_validation->set_rules('jcuti_nama', 'jcuti_nama', 'required');
+        $this->form_validation->set_rules('quota', 'quota', 'required|numeric');
+        $this->form_validation->set_rules('periode', 'periode', 'required');
+
+        if ($this->form_validation->run() == false) {
+            redirect('admin/Overview/');
+        } else {
+            $this->jcuti_model->add();
+            redirect('pegawai/formPengajuan');
         }
     }
 }

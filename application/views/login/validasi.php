@@ -40,7 +40,7 @@
                                     <form class="" action="<?php echo site_url('login/auth'); ?>" method="post">
                                         <div class="form-row">
                                             <div class="col-md-12">
-                                                <div class="position-relative form-group"><input name="nip_baru" id="exampleEmail" placeholder="NIP" type="" class="form-control" required></div>
+                                                <div class="position-relative form-group"><input name="nip" id="exampleEmail" placeholder="NIP" type="" class="form-control" required></div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="position-relative form-group"><input name="nama_pns" id="examplePassword" placeholder="Nama Pegawai" type="" class="form-control" required></div>
@@ -50,19 +50,23 @@
                                             </div>
                                         </div>
                                 </div>
-                                <div class="modal-footer clearfix">
-                                    <div class="float-left"><a href="<?= base_url('welcome/login'); ?>" class="btn-lg btn btn-link">Kembali</a></div>
-                                    <div class="float-right">
-                                        <button class="btn btn-primary btn-lg" type="submit">Validasi</button>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col"><a href="<?= base_url('admin/Overview/login'); ?>" class="btn-lg btn btn-link">ADMIN</a></div>
+                                        <div class="col"><button class="btn btn-primary btn-lg float-right mb-3" type="submit">Validasi</button></div>
                                     </div>
+                                    <!-- <div class="float-left"></div>
+                                    <div class="float-right"> -->
+
                                 </div>
-                                </form>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <script type="text/javascript" src="<?= base_url(); ?>assets/scripts/main.07a59de7b920cd76b874.js"></script>
 </body>

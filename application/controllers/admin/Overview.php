@@ -20,6 +20,11 @@ class Overview extends CI_Controller
         $this->load->library('form_validation');
     }
 
+    public function login()
+    {
+        $this->load->view('login/login');
+    }
+
     public function index()
     {
         // load view admin/overview.php
