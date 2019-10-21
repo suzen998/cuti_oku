@@ -10,9 +10,11 @@ class golongan_model extends CI_model
     public function add()
     {
         $data = [
-            "gol_nama" => $this->input->post('gol_nama', true)
+            "gol_id" => $this->input->post('gol_id', true),
+            "gol_nama" => $this->input->post('gol_nama', true),
+            "gol_ket" => $this->input->post('gol_ket', true)
         ];
-        $this->db->insert('gol_nama', $data);
+        $this->db->insert('golongan', $data);
     }
 
     public function edit()

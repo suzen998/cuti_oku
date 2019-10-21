@@ -105,7 +105,9 @@ class Overview extends CI_Controller
 
     public function addGolongan()
     {
+        $this->form_validation->set_rules('gol_id', 'gol_id', 'required');
         $this->form_validation->set_rules('gol_nama', 'gol_nama', 'required');
+        $this->form_validation->set_rules('gol_ket', 'gol_ket', 'required');
 
         if ($this->form_validation->run() == false) {
             redirect('admin/Overview/');

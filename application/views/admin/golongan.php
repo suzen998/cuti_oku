@@ -16,17 +16,17 @@
 <div class="main-card card mb-3">
     <div class="card-body border border-warning">
         <h5 class="card-title">Tambah Data Golongan</h5>
-        <form id="signupForm" class="mx-auto" action="<?= base_url(''); ?>" method="post" novalidate="novalidate">
+        <form id="signupForm" class="mx-auto" action="<?= base_url('admin/Overview/addGolongan'); ?>" method="post" novalidate="novalidate">
             <div>
                 <div class="form-group col-4 d-inline-block align-middle">
                     <div class="position-relative form-group">
-                        <input name="sub" id="" type="text" class="form-control" placeholder="Masukkan Golongan ID" required>
+                        <input name="gol_id" id="" type="text" class="form-control" placeholder="Masukkan Golongan ID" required>
                     </div>
                     <div class="position-relative form-group">
-                        <input name="sub" id="" type="text" class="form-control" placeholder="Masukkan Golongan Nama" required>
+                        <input name="gol_nama" id="" type="text" class="form-control" placeholder="Masukkan Golongan Nama" required>
                     </div>
                     <div class="position-relative form-group">
-                        <input name="sub" id="" type="text" class="form-control" placeholder="Masukkan Keterangan" required>
+                        <input name="gol_ket" id="" type="text" class="form-control" placeholder="Masukkan Keterangan" required>
                     </div>
                 </div>
                 <div class="form-group col-2 d-block align-middle">
@@ -42,7 +42,7 @@
 <div class="card mb-3 ">
     <div class="card-header-tab card-header">
         <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-            <i class="header-icon fa fa-reorder mr-3 text-muted opacity-6" style="font-size:16px"> </i>Daftar Instansi
+            <i class="header-icon fa fa-reorder mr-3 text-muted opacity-6" style="font-size:16px"> </i>Daftar Golongan
         </div>
     </div>
     <div class="card-body">
