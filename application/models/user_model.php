@@ -10,7 +10,7 @@ class user_model extends CI_model
     public function add()
     {
         $data = [
-            "username" => $this->input->post('username', true)
+            "nip_baru" => $this->input->post('nip_baru', true)
         ];
         $this->db->insert('username', $data);
     }
@@ -20,6 +20,6 @@ class user_model extends CI_model
 
     public function delete($id)
     {
-        $this->db->delete('jenis_kawin_id', ['jenis_kawin_id' => $id]);
+        $this->db->delete('user_id', ['user_id' => $id]);
     }
 }

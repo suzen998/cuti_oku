@@ -16,7 +16,7 @@
 <div class="main-card card mb-3">
     <div class="card-body border border-warning">
         <h5 class="card-title">Tambah Data Golongan</h5>
-        <form id="signupForm" class="mx-auto" action="<?= base_url('admin/Overview/addUnor'); ?>" method="post" novalidate="novalidate">
+        <form id="signupForm" class="mx-auto" action="<?= base_url('admin/Overview/addUser'); ?>" method="post" novalidate="novalidate">
             <div>
                 <div class="form-group col-4 d-inline-block align-middle">
                     <div class="position-relative form-group">
@@ -59,8 +59,8 @@
                 foreach ($user as $use) : ?>
                     <tr>
                         <td class="align-middle"><?= $i++ ?></td>
-                        <td class="align-middle"><?= $use['username']; ?></td>
-                        <td class="align-middle"><a class="btn btn-danger btn-sm tombol-hapus" role="button" href="<?= base_url(); ?>admin/hapusKelas/<?= $use['jenis_cuti_id']; ?>">Hapus</a></td>
+                        <td class="align-middle"><?= $use['nip_baru']; ?></td>
+                        <td class="align-middle"><a class="btn btn-danger btn-sm tombol-hapus" role="button" href="<?= base_url(); ?>admin/hapusKelas/<?= $use['user_id']; ?>">Hapus</a></td>
                     </tr>
                 <?php endforeach; ?>
         </table>

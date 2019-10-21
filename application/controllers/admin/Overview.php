@@ -40,7 +40,7 @@ class Overview extends CI_Controller
     public function addUser()
     {
 
-        $this->form_validation->set_rules('user', 'user', 'user');
+        $this->form_validation->set_rules('user', 'user', 'required');
 
         if ($this->form_validation->run() == false) {
             redirect('admin/Overview/');

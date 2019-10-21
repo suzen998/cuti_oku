@@ -110,7 +110,13 @@
                                 <div class="form-group">
                                     <label for="username">JENIS KELAMIN</label>
                                     <div>
-                                        <input name="jenis_kelamin" id="jenis_kelamin" class="form-control" placeholder="" type="text" required />
+                                        <select name="gol_id" id="gol_id" class="multiselect-dropdown form-control" required />
+                                        <?php if (isset($jenis_kelamin)) {
+                                            foreach ($jenis_kelamin as $jkel) : ?>
+                                                <option value="<?= $jkel['jenis_kelamin']; ?>"><?= $jkel['jenis_kelamin']; ?></option>
+                                        <?php endforeach;
+                                        } ?>
+                                        </select>
                                     </div>
                                 </div>
 
